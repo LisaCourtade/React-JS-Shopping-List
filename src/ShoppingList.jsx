@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-import ShoppingListform from './ShoppingListForm'
+import ShoppingListform from './ShoppingListForm';
+import DeleteButton from "./components/DeleteButton";
 import "./ShoppingList.css";
 
 function ShoppingList() {
@@ -15,13 +16,26 @@ function ShoppingList() {
         })
     }
 
+    function deleteItem(itemId) {
+        const updatedItems = items.filter((item) => {
+            return item.id != itemId;
+        })
+        setItems(updatedItems);
+    }
+
     return (
         <div>
             <h1>Shopping List</h1>
             <ShoppingListform addItem={addItem}/>
-            <div className="shopping-list">
-                <ul >
-                    {items.map(i => <li key={i.id}>{i.quantity} {i.product}</li>)}
+            <div className="paper">
+                <ul>
+                    {items.map((i) => {
+                    return (
+                        <li key={i.id}>
+                            {i.quantity} {i.product} <DeleteButton onDelete={() => deleteItem(i.id)}/>
+                        </li>
+                    )
+                    })}
                 </ul>
             </div>
             
