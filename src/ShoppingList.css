@@ -1,0 +1,45 @@
+.input-field {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+}
+
+.product-form {
+    margin-bottom: 1rem;
+}
+
+.shopping-list {
+    background-image: url("./assets/bg-line.jpg");
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    height: 400px;
+    position: relative;
+    padding: 1rem;
+    padding-left: 2rem;
+    color:black;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.3rem;
+}
+
+.shopping-list:before, .shopping-list:after {
+    content: "";
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.shopping-list:before {
+    background-image: url("./assets/bg-line.jpg");
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+
+.shopping-list:after {
+    background-image: url("./assets/bg-line.jpg");
+    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    left: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+}

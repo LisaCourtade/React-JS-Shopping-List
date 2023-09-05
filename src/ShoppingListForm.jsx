@@ -1,7 +1,8 @@
 import { useState } from "react";
+import "./ShoppingList.css";
 
 function ShoppingListform({addItem}) {
-    const [formData, setFormData] = useState({ product: "", quantity: 0 });
+    const [formData, setFormData] = useState({ product: "", quantity: 1 });
 
     const handleChange = (e) => {
         setFormData(prev => {
@@ -18,26 +19,32 @@ function ShoppingListform({addItem}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}> 
-            <h1>Product is: {formData.product} & quantity is: {formData.quantity}</h1>
-            <label htmlFor="product">Product Name</label>
-            <input 
-                type="text" 
-                placeholder="product name" 
-                name="product" 
-                id="product"
-                value={formData.product}
-                onChange={handleChange}
-            />
-            <label htmlFor="quantity">Quantity</label>
-            <input 
-                type="number" 
-                placeholder="1" 
-                name="quantity" 
-                id="quantity"
-                value={formData.quantity}
-                onChange={handleChange}
-            />
+        <form onSubmit={handleSubmit} className="product-form"> 
+            <div className="input-field">
+                <label htmlFor="product">Product Name</label>
+                <input 
+                    type="text" 
+                    placeholder="Pineapple" 
+                    name="product" 
+                    id="product"
+                    value={formData.product}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
+            <div className="input-field">
+                <label htmlFor="quantity">Quantity</label>
+                <input 
+                    type="number" 
+                    min={1}
+                    placeholder="1" 
+                    name="quantity" 
+                    id="quantity"
+                    value={formData.quantity}
+                    onChange={handleChange}
+                    required
+                />
+            </div>
             <button type="submit">Add Item</button>
         </form>
     )
