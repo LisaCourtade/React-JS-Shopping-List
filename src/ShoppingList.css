@@ -10,11 +10,10 @@
 
 .paper {
     background-image: url("./assets/bg-line.jpg");
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-shadow: 0 0 10px #0000004d;
     height: 400px;
     position: relative;
     padding: 1rem;
-    padding-left: 2rem;
     color:black;
     font-family: 'Shadows Into Light', cursive;
     font-size: 1.3rem;
@@ -30,7 +29,7 @@
 
 .paper:before {
     background-image: url("./assets/bg-line.jpg");
-    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    box-shadow: 0 0 8px #00000033;
     left: -5px;
     top: 4px;
     transform: rotate(-2.5deg);
@@ -38,7 +37,7 @@
 
 .paper:after {
     background-image: url("./assets/bg-line.jpg");
-    box-shadow: 0 0 3px rgba(0,0,0,0.2);
+    box-shadow: 0 0 3px #00000033;
     left: -3px;
     top: 1px;
     transform: rotate(1.4deg);
@@ -47,7 +46,7 @@
 .delete-btn {
     border-radius: 8px;
     border: 1px solid transparent;
-    padding: 0.2em 0.6em;
+    padding: 0.1em 0.6em;
     font-size: 0.5em;
     font-weight: 600;
     background-color: #750707;
@@ -58,4 +57,39 @@
 .delete-btn:hover {
     border-color: #b40e0e;
     background-color: #9c0b0b;
+}
+
+ul {
+    list-style: none;
+    padding-left: 1.8rem;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+}
+
+
+.checkbox {
+    width: 0.8rem;
+    height: 0.8rem;
+    border: 1px solid black;
+    margin-right: 1rem;
+}
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.crossed-out {
+    text-decoration: line-through;
+}
+
+.checked {
+    background-color: black;
 }
