@@ -1,11 +1,14 @@
 import { useState } from "react";
 import { v4 as uuid } from "uuid";
-import ShoppingListform from './ShoppingListForm';
+import ShoppingListform from './components/ShoppingListForm';
 import DeleteButton from "./components/DeleteButton";
 import Item from "./components/Item";
-import "./ShoppingList.css";
+import ToggleSwitch from "./components/ToggleSwitch";
+import { useTheme } from "./ThemeContext";
+import "./styles/ShoppingList.css";
 
 function ShoppingList() {
+    const {isDarkTheme} = useTheme();
     const [items, setItems] = useState([
         {id: uuid(), product: "Bananas", quantity: 5},
         {id: uuid(), product: "Apples", quantity: 4}
@@ -28,7 +31,7 @@ function ShoppingList() {
         <div>
             <h1>Shopping List</h1>
             <ShoppingListform addItem={addItem}/>
-            <div className="paper">
+            <div className={isDarkTheme ? "paper paper-dark" : "paper"}>
                 <ul>
                     {items.map((i) => {
                     return (
@@ -40,7 +43,7 @@ function ShoppingList() {
                     })}
                 </ul>
             </div>
-            
+            <ToggleSwitch/>
         </div>
     )
 }

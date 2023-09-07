@@ -5,7 +5,7 @@ function Item({quantity, product}) {
     return (
     <div className="item">
         <div className={!isCrossedOut ? "checkbox" : "checkbox checked"} onClick={() => setIsCrossedOut(!isCrossedOut)}></div>
-        <div className={isCrossedOut && "crossed-out"}>
+        <div className={isCrossedOut ? "crossed-out" : ""}>
             {quantity} {product}
         </div>
     </div>

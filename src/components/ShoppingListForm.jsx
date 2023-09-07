@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./ShoppingList.css";
+import "../styles/ShoppingList.css";
 
 function ShoppingListform({addItem}) {
     const [formData, setFormData] = useState({ product: "", quantity: 1 });

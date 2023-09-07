@@ -1,10 +1,9 @@
-import { useState } from 'react'
-
-import ShoppingList from './ShoppingList'
-import './App.css'
+import { useState } from 'react';
+import { ThemeProvider } from './ThemeContext';
+import ShoppingList from './ShoppingList';
+import './styles/App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
   const addItem = (item) => {
     
     setItems((prev) => {
@@ -13,9 +12,9 @@ function App() {
   }
 
   return (
-    <>
+    <ThemeProvider>
       <ShoppingList addItem={addItem}/>
-    </>
+    </ThemeProvider>
   )
 }
 

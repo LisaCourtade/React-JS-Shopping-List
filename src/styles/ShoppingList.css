@@ -5,11 +5,18 @@
 }
 
 .product-form {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 1rem;
 }
 
+.product-form > button {
+    margin-bottom: 1rem;
+    align-self: end;
+}
+
 .paper {
-    background-image: url("./assets/bg-line.jpg");
+    background-image: url("../assets/bg-line.jpg");
     box-shadow: 0 0 10px #0000004d;
     height: 400px;
     position: relative;
@@ -28,7 +35,7 @@
 }
 
 .paper:before {
-    background-image: url("./assets/bg-line.jpg");
+    background-image: url("../assets/bg-line.jpg");
     box-shadow: 0 0 8px #00000033;
     left: -5px;
     top: 4px;
@@ -36,7 +43,7 @@
 }
 
 .paper:after {
-    background-image: url("./assets/bg-line.jpg");
+    background-image: url("../assets/bg-line.jpg");
     box-shadow: 0 0 3px #00000033;
     left: -3px;
     top: 1px;
@@ -75,11 +82,11 @@ ul {
     align-items: center;
 }
 
-
 .checkbox {
     width: 0.8rem;
     height: 0.8rem;
     border: 1px solid black;
+    border-radius: 2px;
     margin-right: 1rem;
 }
 .checkbox:hover {
@@ -92,4 +99,27 @@ ul {
 
 .checked {
     background-color: black;
+}
+
+.paper-dark {
+    background-image: none;
+    background-color: #1d1d1e;
+    color: #ffffffde;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+}
+.paper-dark:before {
+    background-image: none;
+    background-color: #1d1d1e;
+}
+.paper-dark:after {
+    background-image: none;
+    background-color: #19191a;
+}
+
+.paper-dark .checkbox {
+    border: 1px solid #ffffffde;
+}
+.paper-dark .checked {
+    background-color: #ffffffde;
 }
